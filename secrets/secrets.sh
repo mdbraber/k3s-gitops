@@ -51,28 +51,31 @@ GENERATED_SECRETS="${REPO_ROOT}/deployments/zz_generated_secrets.yaml"
 # Generate Helm Secrets
 for file in "${REPO_ROOT}"/secrets/helm-templates/*.txt
 do
-  # Get the path and basename of the txt file
-  # e.g. "deployments/default/pihole/pihole"
-  secret_path="$(dirname "$file")/$(basename -s .txt "$file")"
-  
-  # Get the filename without extension
-  # e.g. "pihole"
-  secret_name=$(basename "${secret_path}")
-  
-  # Find namespace by looking for the chart file in the deployments folder
-  namespace="$(find ${REPO_ROOT}/deployments -type f -name "${secret_name}.yaml" | awk -F/ '{print $(NF-1)}')"
-  echo "  Generating helm secret '${secret_name}' in namespace '${namespace}'..."
+  if [[ $file != "${REPO_ROOT}"/secrets/helm-templates/*\.txt ]]
+  then
+	  # Get the path and basename of the txt file
+	  # e.g. "deployments/default/pihole/pihole"
+	  secret_path="$(dirname "$file")/$(basename -s .txt "$file")"
+	  
+	  # Get the filename without extension
+	  # e.g. "pihole"
+	  secret_name=$(basename "${secret_path}")
+	  
+	  # Find namespace by looking for the chart file in the deployments folder
+	  namespace="$(find ${REPO_ROOT}/deployments -type f -name "${secret_name}.yaml" | awk -F/ '{print $(NF-1)}')"
+	  echo "  Generating helm secret '${secret_name}' in namespace '${namespace}'..."
 
-  # Create secret
-  envsubst < "$file" \
-    | \
-  kubectl -n "${namespace}" create secret generic "${secret_name}-helm-values" \
-    --from-file=/dev/stdin --dry-run=client -o json \
-    | \
-  kubeseal --format=yaml --cert="${PUB_CERT}" \
-    >> "${GENERATED_SECRETS}"
+	  # Create secret
+	  envsubst < "$file" \
+	    | \
+	  kubectl -n "${namespace}" create secret generic "${secret_name}-helm-values" \
+	    --from-file=/dev/stdin --dry-run=client -o json \
+	    | \
+	  kubeseal --format=yaml --cert="${PUB_CERT}" \
+	    >> "${GENERATED_SECRETS}"
 
-  echo "---" >> "${GENERATED_SECRETS}"
+	  echo "---" >> "${GENERATED_SECRETS}"
+  fi
 done
 
 # Replace stdin with values.yaml
@@ -187,13 +190,16 @@ fi
 
 for file in "${REPO_ROOT}"/secrets/manifest-templates/*.txt
 do
-  # Get the path and basename of the txt file
-  secret_path="$(dirname "$file")/$(basename -s .txt "$file")"
-  # Get the filename without extension
-  secret_name=$(basename "${secret_path}")
-  echo "  Applying manifest ${secret_name} to cluster..."
-  # Apply this manifest to our cluster
-  if output=$(envsubst < "$file"); then
-    printf '%s' "$output" | kubectl apply -f -
+  if [[ $file != "${REPO_ROOT}"/secrets/manifest-templates/*\.txt ]]
+  then
+	  # Get the path and basename of the txt file
+	  secret_path="$(dirname "$file")/$(basename -s .txt "$file")"
+	  # Get the filename without extension
+	  secret_name=$(basename "${secret_path}")
+	  echo "  Applying manifest ${secret_name} to cluster..."
+	  # Apply this manifest to our cluster
+	  if output=$(envsubst < "$file"); then
+	    printf '%s' "$output" | kubectl apply -f -
+	  fi
   fi
 done
