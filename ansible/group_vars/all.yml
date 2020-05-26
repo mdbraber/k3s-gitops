@@ -38,7 +38,7 @@ k3s_become_for_all: true
 # github options
 github:
   username: mdbraber
-  repository_name: k8s-cluster
+  repository_name: k3s-gitops
   branch: master
 
 # ceph options

@@ -11,7 +11,7 @@
     --git-email={{ github.username }}@users.noreply.github.com \
     --git-url=git@github.com:{{ github.username }}/{{ github.repository_name }} \
     --git-branch={{ github.branch }} \
-    --git-path=cluster \
+    --git-path=deployments \
     --namespace flux | kubectl apply -f -
   environment:
     KUBECONFIG: "{{ REPO_ROOT }}/kubeconfig"
