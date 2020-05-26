@@ -1,10 +1,7 @@
 ---
-- hosts: all
+- hosts: k3s_cluster
   become: true
   gather_facts: true
-
-  vars_files:
-    - vars.yml
 
   pre_tasks:
     # # Enable this if you run into issues updating
@@ -80,21 +77,29 @@
         # https://github.com/ansible/ansible/issues/56832
         force_apt_get: true
 
-  tasks:
-    - include_role:
-        name: system
+  roles:
+    - { role: prepare_nodes/system }
+    - { role: prepare_nodes/unattended_upgrades }
+    - { role: prepare_nodes/user }
+    - { role: prepare_nodes/networking }
+    - { role: xanmanning.k3s }
 
-    - include_role:
-        name: unattended_upgrades
+#    - name: Rebooting hosts
+#      reboot:
+#        msg: "Systems are being rebooted"
+#        reboot_timeout: 60
+#      ignore_errors: true
 
-    - include_role:
-        name: user
+- hosts: master
+  gather_facts: true
+  become: true
+  roles:
+    - { role: kubeconfig }
 
-    - include_role:
-        name: networking
-
-    - name: Rebooting hosts
-      reboot:
-        msg: "Systems are being rebooted"
-        reboot_timeout: 60
-      ignore_errors: true
+- hosts: localhost
+  gather_facts: false
+  become: false
+  roles:
+    - { role: k3s/bootstrap }
+    - { role: flux }
+    - { role: helm_operator, when: helm_operator == true }
