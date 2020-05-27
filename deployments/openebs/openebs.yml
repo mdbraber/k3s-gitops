@@ -11,7 +11,7 @@ spec:
   releaseName: openebs
   helmVersion: v3
   chart:
-    git: https://github.com/openebs/charts.git
+    git: git@github.com:openebs/charts.git
     path: stable/openebs
     ref: master
   values:
