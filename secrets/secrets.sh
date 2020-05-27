@@ -35,7 +35,7 @@ fi
 PUB_CERT="${REPO_ROOT}/secrets/pub-cert.pem"
 
 # Path to generated secrets file
-GENERATED_SECRETS="${REPO_ROOT}/deployments/zz_generated_secrets.yaml"
+GENERATED_SECRETS="${REPO_ROOT}/deployments/zz_generated_secrets.yml"
 
 {
   echo "#"
@@ -62,7 +62,7 @@ do
 	  secret_name=$(basename "${secret_path}")
 	  
 	  # Find namespace by looking for the chart file in the deployments folder
-	  namespace="$(find ${REPO_ROOT}/deployments -type f -name "${secret_name}.yaml" | awk -F/ '{print $(NF-1)}')"
+	  namespace="$(find ${REPO_ROOT}/deployments -type f -name "${secret_name}.yml" | awk -F/ '{print $(NF-1)}')"
 	  echo "  Generating helm secret '${secret_name}' in namespace '${namespace}'..."
 
 	  # Create secret
@@ -78,8 +78,8 @@ do
   fi
 done
 
-# Replace stdin with values.yaml
-sed -i 's/stdin\:/values.yaml\:/g' "${GENERATED_SECRETS}"
+# Replace stdin with values.yml
+sed -i 's/stdin\:/values.yml\:/g' "${GENERATED_SECRETS}"
 
 #
 # Generic Secrets
