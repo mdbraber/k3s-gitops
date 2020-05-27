@@ -23,11 +23,11 @@ spec:
       image:
         repository: metallb/speaker
         tag: v0.9.3
-    prometheus:
-      serviceMonitor:
-        enabled: true
-      prometheusRule:
-        enabled: true
+#    prometheus:
+#      serviceMonitor:
+#        enabled: true
+#      prometheusRule:
+#        enabled: true
     configInline:
       address-pools:
         - name: default
