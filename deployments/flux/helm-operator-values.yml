@@ -1,7 +1,7 @@
 createCRD: false
-#git:
-#  ssh:
-#    secretName: flux-git-deploy
+git:
+  ssh:
+    secretName: flux-git-deploy
 helm:
   versions: "v3"
 #prometheus:
