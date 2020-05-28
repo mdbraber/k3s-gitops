@@ -1,5 +1,5 @@
 git:
-  url: "git@github.com:onedr0p/k3s-gitops.git"
+  url: "git@github.com:mdbraber/k3s-gitops.git"
   branch: master
   path: deployments
 registry:
@@ -15,10 +15,10 @@ dnsConfig:
   options:
     - name: ndots
       value: "1"
-prometheus:
-  enabled: true
-  serviceMonitor:
-    create: true
-    interval: 30s
-    scrapeTimeout: 10s
-    namespace: flux
+#prometheus:
+#  enabled: true
+#  serviceMonitor:
+#    create: true
+#    interval: 30s
+#    scrapeTimeout: 10s
+#    namespace: flux
