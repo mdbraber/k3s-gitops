@@ -12,6 +12,8 @@ nodes:
       ansible_host: "k3s-worker-a.mdbraber.net"
     k3s-worker-b:
       ansible_host: "k3s-worker-b.mdbraber.net"
+    k3s-worker-c:
+      ansible_host: "k3s-worker-c.mdbraber.net"
   vars:
 
 nfs:
@@ -21,6 +23,7 @@ ceph:
   hosts:
     k3s-worker-a:
     k3s-worker-b:
+    k3s-worker-c:
   vars:
 
 k3s_cluster:
