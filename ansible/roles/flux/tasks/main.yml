@@ -1,7 +1,7 @@
 ---
 
 - name: Create flux namespace
-  command: "kubectl apply -f {{ REPO_ROOT }}/deployments/flux/_namespace.yaml"
+  command: "kubectl apply -f {{ REPO_ROOT }}/deployments/flux/_namespace.yml"
   environment:
     KUBECONFIG: "{{ REPO_ROOT }}/kubeconfig"
 
