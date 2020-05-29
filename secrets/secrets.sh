@@ -51,7 +51,7 @@ GENERATED_SECRETS="${REPO_ROOT}/deployments/zz_generated_secrets.yml"
 # Generate Helm Secrets
 for file in "${REPO_ROOT}"/secrets/helm-templates/*.txt
 do
-  if [[ $file != "${REPO_ROOT}"/secrets/helm-templates/*\.txt ]]
+  if [[ $file != "${REPO_ROOT}/secrets/helm-templates/*.txt" ]]
   then
 	  # Get the path and basename of the txt file
 	  # e.g. "deployments/default/pihole/pihole"
@@ -190,7 +190,7 @@ fi
 
 for file in "${REPO_ROOT}"/secrets/manifest-templates/*.txt
 do
-  if [[ $file != "${REPO_ROOT}"/secrets/manifest-templates/*\.txt ]]
+  if [[ $file != "${REPO_ROOT}/secrets/manifest-templates/*.txt" ]]
   then
 	  # Get the path and basename of the txt file
 	  secret_path="$(dirname "$file")/$(basename -s .txt "$file")"
