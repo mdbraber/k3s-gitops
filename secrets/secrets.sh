@@ -78,8 +78,8 @@ do
   fi
 done
 
-# Replace stdin with values.yml
-sed -i 's/stdin\:/values.yml\:/g' "${GENERATED_SECRETS}"
+# Replace stdin with values.yaml
+sed -i 's/stdin\:/values.yaml\:/g' "${GENERATED_SECRETS}"
 
 #
 # Generic Secrets
