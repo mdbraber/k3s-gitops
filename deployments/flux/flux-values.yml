@@ -1,4 +1,6 @@
 git:
+  user: mdbraber
+  email: mdbraber@users.noreply.github.com
   url: "git@github.com:mdbraber/k3s-gitops.git"
   branch: master
   path: deployments
