@@ -13,7 +13,7 @@ spec:
   chart:
     repository: https://openebs.github.io/charts
     name: openebs
-    version: 1.9.0
+    version: 0.8.2
   values:
     rbac:
       pspEnabled: true
