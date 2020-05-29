@@ -48,8 +48,8 @@ spec:
     grafana:
       deploymentStrategy:
         type: Recreate
-      podAnnotations:
-        backup.velero.io/backup-volumes: storage
+#      podAnnotations:
+#        backup.velero.io/backup-volumes: storage
       persistence:
         enabled: true
         storageClassName: "openebs-cstor-sparse"
