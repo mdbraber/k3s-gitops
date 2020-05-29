@@ -4,5 +4,6 @@ rebuild/
 # Trash
 .DS_Store
 Thumbs.db
+*.swp
 
 tests/vagrant/.vagrant
