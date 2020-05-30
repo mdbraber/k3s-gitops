@@ -139,7 +139,7 @@ spec:
                 - ReadWriteOnce
               resources:
                 requests:
-                  storage: 1G
+                  storage: 5G
 #        additionalScrapeConfigs:
 #        - job_name: 'node-exporter'
 #          static_configs:
