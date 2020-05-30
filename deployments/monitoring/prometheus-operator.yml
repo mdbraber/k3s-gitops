@@ -135,6 +135,8 @@ spec:
           volumeClaimTemplate:
             spec:
               storageClassName: "openebs-jiva-default"
+              accessModes:
+                - ReadWriteOnce
               resources:
                 requests:
                   storage: 1G
