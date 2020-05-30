@@ -25,7 +25,7 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              storageClassName: "openebs-cstor-sparse"
+              storageClassName: "openebs-jiva-default"
               resources:
                 requests:
                   storage: 10Gi
@@ -52,7 +52,7 @@ spec:
 #        backup.velero.io/backup-volumes: storage
       persistence:
         enabled: true
-        storageClassName: "openebs-cstor-sparse"
+        storageClassName: "openebs-jiva-default"
         size: 10Gi
         accessModes:
         - ReadWriteOnce
