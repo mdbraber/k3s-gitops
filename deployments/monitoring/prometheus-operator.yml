@@ -137,7 +137,7 @@ spec:
               storageClassName: "openebs-jiva-default"
               resources:
                 requests:
-                  storage: 100Gi
+                  storage: 1Gi
 #        additionalScrapeConfigs:
 #        - job_name: 'node-exporter'
 #          static_configs:
