@@ -10,7 +10,7 @@ metadata:
 spec:
   releaseName: prometheus-operator
   chart:
-    repository: https://s3-eu-west-1.amazonaws.com/coreos-charts/stable/
+    repository: https://kubernetes-charts.storage.googleapis.com/ 
     name: prometheus-operator
     version: 8.13.8
   values:
