@@ -2,20 +2,19 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: prometheus 
+  name: prometheus-operator 
   namespace: monitoring
   annotations:
     fluxcd.io/ignore: "false"
     fluxcd.io/automated: "false"
 spec:
-  releaseName: prometheus-operator
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/ 
     name: prometheus-operator
     version: 8.13.8
   values:
     prometheusOperator:
-      createCustomResource: true
+      createCustomResource: false
       image:
         repository: quay.io/coreos/prometheus-operator
         tag: v0.39.0
