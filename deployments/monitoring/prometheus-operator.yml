@@ -14,7 +14,6 @@ spec:
     version: 8.13.8
   values:
     prometheusOperator:
-      createCustomResource: false
       image:
         repository: quay.io/coreos/prometheus-operator
         tag: v0.39.0
