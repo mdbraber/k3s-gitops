@@ -26,7 +26,6 @@ spec:
       alertmanagerSpec:
         storage:
           volumeClaimTemplate:
-            apiVersion: v1
             metadata:
               name: "alertmanager-data"
             spec:
@@ -138,7 +137,6 @@ spec:
         walCompression: true
         storageSpec:
           volumeClaimTemplate:
-            apiVersion: v1
             metadata:
               name: "prometheus-data"
             spec:
