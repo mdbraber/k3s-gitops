@@ -18,6 +18,8 @@ spec:
       createCustomResource: false
       persistence:
         name: "prometheus-operator-data"
+      persistent:
+        useReleaseName: true
     alertmanager:
       ingress:
         enabled: true
@@ -120,6 +122,8 @@ spec:
     prometheus:
       persistence:
         name: "prometheus-data"
+      persistent:
+        useReleaseName: true
       ingress:
         enabled: true
         annotations:
