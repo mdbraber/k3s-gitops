@@ -9,12 +9,12 @@ metadata:
     fluxcd.io/automated: "false"
 spec:
   chart:
-#    repository: https://kubernetes-charts.storage.googleapis.com/
-#    name: prometheus-operator
-#    version: 8.13.10
     git: https://github.com/iwilltry42/charts.git
     path: stable/prometheus-operator
     ref: master
+#    repository: https://kubernetes-charts.storage.googleapis.com/
+#    name: prometheus-operator
+#    version: 8.13.10
   values:
     prometheusOperator:
       createCustomRessource: false
@@ -36,7 +36,7 @@ spec:
               storageClassName: "openebs-jiva-default"
               resources:
                 requests:
-                  storage: 6G
+                  storage: 5G
     nodeExporter:
       serviceMonitor:
         relabelings:
@@ -61,7 +61,7 @@ spec:
       persistence:
         enabled: true
         storageClassName: "openebs-jiva-default"
-        storage: 6G
+        storage: 5G
         accessModes:
         - ReadWriteOnce
       env:
@@ -147,7 +147,7 @@ spec:
               storageClassName: "openebs-jiva-default"
               resources:
                 requests:
-                  storage: 6G 
+                  storage: 5G 
 #        additionalScrapeConfigs:
 #        - job_name: 'node-exporter'
 #          static_configs:
