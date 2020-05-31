@@ -27,7 +27,7 @@ spec:
             metadata:
               name: prometeheus-operator-alertmanager 
             spec:
-              storageClassName: "openebs-standard"
+              storageClassName: "openebs-jiva-default"
               resources:
                 requests:
                   storage: 6G
@@ -54,7 +54,7 @@ spec:
 #        backup.velero.io/backup-volumes: storage
       persistence:
         enabled: true
-        storageClassName: "openebs-standard"
+        storageClassName: "openebs-jiva-default"
         storage: 6G
         accessModes:
         - ReadWriteOnce
@@ -138,7 +138,7 @@ spec:
             metadata:
               name: prometheus-prometheus
             spec:
-              storageClassName: "openebs-standard"
+              storageClassName: "openebs-jiva-default"
               resources:
                 requests:
                   storage: 6G 
