@@ -25,7 +25,7 @@ spec:
         storage:
           volumeClaimTemplate:
             metadata:
-              name: "prometeheus-operator-alertmanager"
+              name: alertmanager-data 
             spec:
               storageClassName: "openebs-jiva-default"
               resources:
@@ -136,7 +136,7 @@ spec:
         storageSpec:
           volumeClaimTemplate:
             metadata:
-              name: "prometheus-prometheus"
+              name: prometheus-data 
             spec:
               storageClassName: "openebs-jiva-default"
               resources:
