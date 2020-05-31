@@ -10,9 +10,12 @@ metadata:
 spec:
   releaseName: prometheus-operator
   chart:
-    repository: https://kubernetes-charts.storage.googleapis.com/
-    name: prometheus-operator
-    version: 8.13.8
+#    repository: https://kubernetes-charts.storage.googleapis.com/
+#    name: prometheus-operator
+#    version: 8.13.8
+    git: git@github.com:helm/charts
+    path: stable/prometheus-operator
+    ref: master
   values:
     prometheusOperator:
       createCustomResource: false
