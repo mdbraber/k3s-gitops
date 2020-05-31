@@ -16,10 +16,6 @@ spec:
   values:
     prometheusOperator:
       createCustomResource: false
-      persistence:
-        name: "prometheus-operator-data"
-      persistent:
-        useReleaseName: true
     alertmanager:
       ingress:
         enabled: true
@@ -29,7 +25,7 @@ spec:
         storage:
           volumeClaimTemplate:
             metadata:
-              name: prometeheus-operator-alertmanager 
+              name: "prometeheus-operator-alertmanager"
             spec:
               storageClassName: "openebs-jiva-default"
               resources:
@@ -120,10 +116,6 @@ spec:
     kubeProxy:
       enabled: false
     prometheus:
-      persistence:
-        name: "prometheus-data"
-      persistent:
-        useReleaseName: true
       ingress:
         enabled: true
         annotations:
@@ -144,7 +136,7 @@ spec:
         storageSpec:
           volumeClaimTemplate:
             metadata:
-              name: prometheus-prometheus
+              name: "prometheus-prometheus"
             spec:
               storageClassName: "openebs-jiva-default"
               resources:
