@@ -13,7 +13,7 @@ spec:
 #    repository: https://kubernetes-charts.storage.googleapis.com/
 #    name: prometheus-operator
 #    version: 8.13.8
-    git: git@github.com:helm/charts
+    git: git@github.com:helm/charts.git
     path: stable/prometheus-operator
     ref: master
   values:
