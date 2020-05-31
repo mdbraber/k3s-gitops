@@ -1,4 +1,3 @@
-## test
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -29,7 +28,7 @@ spec:
               storageClassName: "openebs-standard"
               resources:
                 requests:
-                  storage: 5G
+                  storage: 6G
     nodeExporter:
       serviceMonitor:
         relabelings:
@@ -54,7 +53,7 @@ spec:
       persistence:
         enabled: true
         storageClassName: "openebs-standard"
-        storage: 5G
+        storage: 6G
         accessModes:
         - ReadWriteOnce
       env:
@@ -138,7 +137,7 @@ spec:
               storageClassName: "openebs-standard"
               resources:
                 requests:
-                  storage: 5G 
+                  storage: 6G 
 #        additionalScrapeConfigs:
 #        - job_name: 'node-exporter'
 #          static_configs:
