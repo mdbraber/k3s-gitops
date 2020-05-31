@@ -139,7 +139,7 @@ spec:
             metadata:
               name: prometheus-prometheus-pvc
               labels: prometheus-prometheus-pvc
-            specname:
+            spec:
               storageClassName: "openebs-standard"
               resources:
                 requests:
