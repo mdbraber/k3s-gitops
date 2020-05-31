@@ -16,6 +16,8 @@ spec:
   values:
     prometheusOperator:
       createCustomResource: false
+      persistence:
+        name: "prometheus-operator-data"
     alertmanager:
       ingress:
         enabled: true
