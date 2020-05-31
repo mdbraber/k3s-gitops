@@ -11,10 +11,10 @@ spec:
   releaseName: openebs
   helmVersion: v3
   chart:
-    repository: https://openebs.github.io/charts
-    name: openebs
-    version: 0.8.2
----
+    git: git@github.com:openebs/charts.git
+    path: stable/openebs
+    ref: master
+  ---
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
