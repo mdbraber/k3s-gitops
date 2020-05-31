@@ -24,6 +24,8 @@ spec:
       alertmanagerSpec:
         storage:
           volumeClaimTemplate:
+            metadata:
+              name: prometheus-operator-pvc
             spec:
               storageClassName: "openebs-standard"
               resources:
@@ -133,6 +135,8 @@ spec:
         walCompression: true
         storageSpec:
           volumeClaimTemplate:
+            metadata:
+              name: prometheus-prometheus-pvc
             spec:
               storageClassName: "openebs-standard"
               resources:
