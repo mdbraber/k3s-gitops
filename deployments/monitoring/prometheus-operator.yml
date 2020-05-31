@@ -10,12 +10,15 @@ metadata:
 spec:
   releaseName: prometheus-operator
   chart:
-    repository: https://kubernetes-charts.storage.googleapis.com/
+    repository: https://s3-eu-west-1.amazonaws.com/coreos-charts/stable/
     name: prometheus-operator
     version: 8.13.8
   values:
     prometheusOperator:
       createCustomResource: false
+      image:
+        repository: quay.io/coreos/prometheus-operator
+        tag: v0.39.0
     alertmanager:
       ingress:
         enabled: true
