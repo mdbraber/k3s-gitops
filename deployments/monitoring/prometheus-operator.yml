@@ -26,6 +26,7 @@ spec:
           volumeClaimTemplate:
             metadata:
               name: prometheus-operator-pvc
+              labels: prometheus-operator-pvc
             spec:
               storageClassName: "openebs-standard"
               resources:
@@ -137,7 +138,8 @@ spec:
           volumeClaimTemplate:
             metadata:
               name: prometheus-prometheus-pvc
-            spec:
+              labels: prometheus-prometheus-pvc
+            specname:
               storageClassName: "openebs-standard"
               resources:
                 requests:
