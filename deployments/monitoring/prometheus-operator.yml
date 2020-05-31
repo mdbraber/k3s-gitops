@@ -25,7 +25,7 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              storageClassName: "openebs-jiva-default"
+              storageClassName: "openebs-standard"
               resources:
                 requests:
                   storage: 5G
@@ -52,7 +52,7 @@ spec:
 #        backup.velero.io/backup-volumes: storage
       persistence:
         enabled: true
-        storageClassName: "openebs-jiva-default"
+        storageClassName: "openebs-standard"
         storage: 5G
         accessModes:
         - ReadWriteOnce
@@ -134,7 +134,7 @@ spec:
         storageSpec:
           volumeClaimTemplate:
             spec:
-              storageClassName: "openebs-jiva-default"
+              storageClassName: "openebs-standard"
               resources:
                 requests:
                   storage: 5G 
