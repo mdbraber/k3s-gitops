@@ -116,6 +116,8 @@ spec:
     kubeProxy:
       enabled: false
     prometheus:
+      persistence:
+        name: "prometheus-data"
       ingress:
         enabled: true
         annotations:
