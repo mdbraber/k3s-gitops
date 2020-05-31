@@ -14,12 +14,15 @@ spec:
     repository: https://openebs.github.io/charts
     name: openebs
     version: 0.8.2
-  values:
-    rbac:
-      pspEnabled: true
-    ndm:
-      sparse:
-        count: '1'
-    apiserver:
-      sparse:
-        enabled: true
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+   name: openebs-standard
+provisioner: openebs.io/provisioner-iscsi
+parameters:
+  openebs.io/storage-pool: "default"
+  openebs.io/jiva-replica-count: "3"
+  openebs.io/volume-monitor: "true"
+  openebs.io/capacity: 5G
+
