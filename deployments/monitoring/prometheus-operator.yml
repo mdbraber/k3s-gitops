@@ -10,12 +10,9 @@ metadata:
 spec:
   releaseName: prometheus-operator
   chart:
-#    repository: https://kubernetes-charts.storage.googleapis.com/
-#    name: prometheus-operator
-#    version: 8.13.8
-    git: https://github.com/helm/charts.git
-    path: stable/prometheus-operator
-    ref: master
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: prometheus-operator
+    version: 8.13.8
   values:
     prometheusOperator:
       createCustomResource: false
@@ -27,6 +24,7 @@ spec:
       alertmanagerSpec:
         storage:
           volumeClaimTemplate:
+            apiVersion: v1
             metadata:
               name: "alertmanager-data"
             spec:
@@ -138,6 +136,7 @@ spec:
         walCompression: true
         storageSpec:
           volumeClaimTemplate:
+            apiVersion: v1
             metadata:
               name: "prometheus-data"
             spec:
