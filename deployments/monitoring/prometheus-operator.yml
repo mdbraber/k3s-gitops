@@ -28,7 +28,7 @@ spec:
               storageClassName: "openebs-standard"
               resources:
                 requests:
-                  storage: 6G
+                  storage: 5G
     nodeExporter:
       serviceMonitor:
         relabelings:
@@ -53,7 +53,7 @@ spec:
       persistence:
         enabled: true
         storageClassName: "openebs-standard"
-        storage: 6G
+        storage: 5G
         accessModes:
         - ReadWriteOnce
       env:
@@ -137,7 +137,7 @@ spec:
               storageClassName: "openebs-standard"
               resources:
                 requests:
-                  storage: 6G 
+                  storage: 5G 
 #        additionalScrapeConfigs:
 #        - job_name: 'node-exporter'
 #          static_configs:
