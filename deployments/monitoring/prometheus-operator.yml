@@ -9,12 +9,12 @@ metadata:
     fluxcd.io/automated: "false"
 spec:
   chart:
-    git: git@github.com:helm/charts.git
+#    repository: https://kubernetes-charts.storage.googleapis.com/
+#    name: prometheus-operator
+#    version: 8.13.10
+    git: https://github.com/iwilltry42/charts.git
     path: stable/prometheus-operator
-    ref: 310c518f7a
-    #    repository: https://kubernetes-charts.storage.googleapis.com/ 
-    #    name: prometheus-operator
-    #    version: 8.13.10
+    ref: master
   values:
     prometheusOperator:
       createCustomRessource: false
