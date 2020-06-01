@@ -33,4 +33,4 @@ spec:
         - name: default
           protocol: layer2
           addresses:
-          - 172.16.11.100-172.16.11.2400
+          - 172.16.11.100-172.16.11.240

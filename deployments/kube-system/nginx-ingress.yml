@@ -19,7 +19,7 @@ spec:
     controller:
       replicaCount: 3
       service:
-        loadBalancerIP: 172.16.14.199
+        loadBalancerIP: 172.16.11.100
         externalTrafficPolicy: Local
       config:
         ssl-protocols: "TLSv1.3 TLSv1.2"
