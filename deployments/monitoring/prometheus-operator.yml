@@ -17,6 +17,7 @@ spec:
     version: 8.13.8
     appVersion: 0.38.0
   values:
+    fullnameOverride: 'prometheus'
     prometheusOperator:
       createCustomResource: false
       manageCrds: false
