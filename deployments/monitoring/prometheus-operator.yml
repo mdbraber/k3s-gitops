@@ -9,7 +9,7 @@ metadata:
     fluxcd.io/automated: "false"
 spec:
   chart:
-    git: https://github.com/iwilltry42/charts.git
+    git: https://github.com/iwilltry42/charts
     path: stable/prometheus-operator
     ref: master
     #repository: https://kubernetes-charts.storage.googleapis.com/
