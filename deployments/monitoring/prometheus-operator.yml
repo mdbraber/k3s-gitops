@@ -38,7 +38,7 @@ spec:
             kind: PersistentVolumeClaim
             metadata:
               name: "alertmanager-data"
-              labels:
+            label:
                 name: "alertmanager-data"
             spec:
               storageClassName: "openebs-jiva-default"
@@ -153,7 +153,7 @@ spec:
             kind: PersistentVolumeClaim
             metadata:
               name: "prometheus-data"
-              labels:
+            label:
                 name: "prometheus-data"
             spec:
               storageClassName: "openebs-jiva-default"
