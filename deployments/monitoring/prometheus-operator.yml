@@ -43,7 +43,7 @@ spec:
               storageClassName: "openebs-jiva-default"
               resources:
                 requests:
-                  storage: 5G
+                  storage: 4G
     nodeExporter:
       serviceMonitor:
         relabelings:
@@ -68,7 +68,7 @@ spec:
       persistence:
         enabled: true
         storageClassName: "openebs-jiva-default"
-        storage: 5G
+        storage: 4G
         accessModes:
         - ReadWriteOnce
       env:
@@ -156,7 +156,7 @@ spec:
               storageClassName: "openebs-jiva-default"
               resources:
                 requests:
-                  storage: 5G 
+                  storage: 4G 
 #        additionalScrapeConfigs:
 #        - job_name: 'node-exporter'
 #          static_configs:
