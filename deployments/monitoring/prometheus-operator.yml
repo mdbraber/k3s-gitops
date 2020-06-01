@@ -86,7 +86,7 @@ spec:
       - vonage-status-panel
       - grafana-worldmap-panel
       dashboardProviders:
-        dashboardproviders.yml:
+        dashboardproviders.yaml:
           apiVersion: 1
           providers:
           - name: 'default'
