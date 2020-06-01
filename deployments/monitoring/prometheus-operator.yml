@@ -18,7 +18,7 @@ spec:
     appVersion: 0.39.0
   values:
     prometheusOperator:
-      createCustomRessource: false
+      createCustomResource: false
       manageCrds: false
       image:
         repository: quay.io/coreos/prometheus-operator
