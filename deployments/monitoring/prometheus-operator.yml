@@ -12,6 +12,7 @@ spec:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: prometheus-operator
     version: 8.13.8
+    appVersion: 0.39.0
   values:
     prometheusOperator:
       createCustomRessource: false
@@ -19,7 +20,10 @@ spec:
       image:
         repository: quay.io/coreos/prometheus-operator
         tag: v0.39.0
-    alertmanager:
+    prometheusConfigReloaderImage: 
+      repository: quay.io/coreos/prometheus-config-reloader
+      tag: v0.39.0
+alertmanager:
       ingress:
         enabled: true
         annotations:
