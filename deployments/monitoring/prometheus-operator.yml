@@ -23,7 +23,7 @@ spec:
     prometheusConfigReloaderImage: 
       repository: quay.io/coreos/prometheus-config-reloader
       tag: v0.39.0
-alertmanager:
+    alertmanager:
       ingress:
         enabled: true
         annotations:
